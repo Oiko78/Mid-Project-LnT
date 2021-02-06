@@ -23,8 +23,8 @@ public class Main {
         {
           String id = "", nama = "", gender = "", jabatan = ""; 
           System.out.println(" === Insert Menu ===");
-          boolean isValid = false;
           // input nama
+          boolean isValid = false;
           while(!isValid) {
             System.out.print("Input nama karyawan [>= 3]: ");
             nama = scan.nextLine();
@@ -69,7 +69,7 @@ public class Main {
           System.out.println("Berhasil menambahkan karyawan dengan id " + id);
 
           // validasi gaji karyawan sebelumnya
-          if(database.karyawans.size() >= 3) {
+          if(database.karyawans.size() > 3) {
             System.out.print("Bonus sebesar " + persentase * 100 + "% telah diberikan kepada karyawan dengan id ");
             for(Karyawan karyawan : database.karyawans) {
               karyawan.tambahGaji(persentase);
@@ -186,7 +186,6 @@ public class Main {
         break;
       }
     }
-    
     scan.close();
   }
 }
